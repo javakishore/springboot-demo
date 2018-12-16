@@ -1,6 +1,5 @@
 package com.springboot.demo.config;
 
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -16,30 +15,28 @@ import static springfox.documentation.builders.PathSelectors.regex;
 @Configuration
 public class SwaggerConfig {
 
+  @Bean
+  public Docket productApi() {
+    return new Docket(DocumentationType.SWAGGER_2)
+        .select()
+        .apis(RequestHandlerSelectors.basePackage("com.springboot.demo"))
+        .paths(regex("/rest.*"))
+        .build()
+        .apiInfo(metaInfo());
+  }
 
-    @Bean
-    public Docket productApi() {
-        return new Docket(DocumentationType.SWAGGER_2)
-                .select()
-                .apis(RequestHandlerSelectors.basePackage("com.springboot.demo"))
-                .paths(regex("/rest.*"))
-                .build()
-                .apiInfo(metaInfo());
-    }
+  private ApiInfo metaInfo() {
 
-    private ApiInfo metaInfo() {
+    ApiInfo apiInfo =
+        new ApiInfo(
+            "Spring Boot Swagger Example API",
+            "Spring Boot Swagger Example API for UI",
+            "1.0",
+            "Terms of Service",
+            new Contact("Developers", "http://developer.com", "developers@gmail.com"),
+            "Apache License Version 2.0",
+            "https://www.apache.org/licesen.html");
 
-        ApiInfo apiInfo = new ApiInfo(
-                "Spring Boot Swagger Example API",
-                "Spring Boot Swagger Example API for UI",
-                "1.0",
-                "Terms of Service",
-                new Contact("Developers", "http://developer.com",
-                        "developers@gmail.com"),
-                "Apache License Version 2.0",
-                "https://www.apache.org/licesen.html"
-        );
-
-        return apiInfo;
-    }
+    return apiInfo;
+  }
 }
