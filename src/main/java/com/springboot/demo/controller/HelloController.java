@@ -11,28 +11,26 @@ import org.springframework.web.bind.annotation.*;
 @Api(value = "HelloWorld Resource", description = "shows hello world")
 public class HelloController {
 
-    @ApiOperation(value = "Returns Hello World")
-    @ApiResponses(
-            value = {
-                    @ApiResponse(code = 100, message = "100 is the message"),
-                    @ApiResponse(code = 200, message = "Successful Hello World")
-            }
-    )
-    @GetMapping
-    public String hello() {
-        return "Hello World";
-    }
+  @ApiOperation(value = "Returns Hello World")
+  @ApiResponses(
+      value = {
+        @ApiResponse(code = 100, message = "100 is the message"),
+        @ApiResponse(code = 200, message = "Successful Hello World")
+      })
+  @GetMapping
+  public String hello() {
+    return "Hello World";
+  }
 
-    @ApiOperation(value = "Returns Hello World")
-    @PostMapping("/post")
-    public String helloPost(@RequestBody final String hello) {
-        return hello;
-    }
+  @ApiOperation(value = "Returns Hello World")
+  @PostMapping("/post")
+  public String helloPost(@RequestBody final String hello) {
+    return hello;
+  }
 
-    @ApiOperation(value = "Returns Hello World")
-    @PutMapping("/put")
-    public String helloPut(@RequestBody final String hello) {
-        return hello;
-    }
+  @ApiOperation(value = "Returns Hello World")
+  @PutMapping("/put")
+  public String helloPut(@RequestBody final String hello) {
+    return hello;
+  }
 }
-
