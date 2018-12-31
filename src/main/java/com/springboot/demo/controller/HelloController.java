@@ -7,7 +7,7 @@ import io.swagger.annotations.ApiResponses;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/rest/hello")
+@RequestMapping("/rest")
 @Api(value = "HelloWorld Resource", description = "shows hello world")
 public class HelloController {
 
@@ -17,9 +17,9 @@ public class HelloController {
         @ApiResponse(code = 100, message = "100 is the message"),
         @ApiResponse(code = 200, message = "Successful Hello World")
       })
-  @GetMapping
+  @GetMapping("/hello")
   public String hello() {
-    return "Hello World";
+    return "Hello World ";
   }
 
   @ApiOperation(value = "Returns Hello World")
