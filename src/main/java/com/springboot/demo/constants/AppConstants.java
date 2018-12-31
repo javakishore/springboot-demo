@@ -1,4 +1,4 @@
-package com.springboot.demo.config;
+package com.springboot.demo.constants;
 
 public class AppConstants {
 
