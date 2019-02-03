@@ -22,7 +22,7 @@ public class SpringConfig {
         pspc.setIgnoreUnresolvablePlaceholders( true );
         return pspc;
     }
-    @Bean
+    //@Bean
     public HibernateJpaSessionFactoryBean sessionFactory(EntityManagerFactory emf) {
         HibernateJpaSessionFactoryBean factory = new HibernateJpaSessionFactoryBean();
         factory.setEntityManagerFactory(emf);

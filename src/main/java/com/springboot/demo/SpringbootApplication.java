@@ -9,8 +9,8 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.PropertySource;
 
-@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class})
-@EnableAutoConfiguration
+@SpringBootApplication
+@EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class})
 @PropertySource("file:/etc/config/application.properties")
 public class SpringbootApplication extends SpringBootServletInitializer {
 
