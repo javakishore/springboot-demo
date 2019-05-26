@@ -7,7 +7,7 @@
     <groupId>com.springboot.demo</groupId>
     <artifactId>springboot-example</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
 
     <name>springboot-example</name>
     <description>Demo project for Spring Boot</description>

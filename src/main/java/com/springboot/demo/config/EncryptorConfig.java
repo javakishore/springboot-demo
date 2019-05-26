@@ -29,10 +29,10 @@ public class EncryptorConfig {
     encryptor.setConfig(environmentVariablesConfiguration());
     return encryptor;
   }
-  public static void main(String...args){
+ /* public static void main(String...args){
     PooledPBEStringEncryptor encryptor = new PooledPBEStringEncryptor();
     encryptor.setConfig(environmentVariablesConfiguration());
     System.out.println(encryptor.encrypt("dbuser"));
     System.out.println(encryptor.decrypt("3Z3J3SJAhqMlCkRZHqA1tQ=="));
-  }
+  }*/
 }
